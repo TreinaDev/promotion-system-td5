@@ -45,7 +45,7 @@ feature 'Admin approves a promotion' do
                       code: 'NATAL10', discount_rate: 10, coupon_quantity: 100,
                       expiration_date: '22/12/2033', user: creator)
     approval_user = User.create!(email: 'henrique@email.com', password: '123456')
-    
+
     login_as approval_user, scope: :user
     visit promotion_path(promotion)
     click_on 'Aprovar Promoção'
@@ -56,5 +56,6 @@ feature 'Admin approves a promotion' do
     expect(promotion.approver).to eq approval_user
     expect(page).to have_content 'Status: Aprovada'
   end
+
 
 end

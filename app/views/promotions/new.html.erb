@@ -36,5 +36,8 @@
     <%= f.label :expiration_date %>
     <%= f.text_field :expiration_date %>
   </div>
+  <div>
+    <%= f.collection_check_boxes :product_category_ids, @product_categories, :id, :name %>
+  </div>
   <%= f.submit 'Criar promoção' %>
 <% end %>
