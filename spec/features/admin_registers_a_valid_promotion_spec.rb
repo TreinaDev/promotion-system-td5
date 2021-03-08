@@ -17,12 +17,14 @@ feature 'Admin registers a valid promotion' do
     click_on 'Criar promoção'
 
     expect(Promotion.count).to eq 0
+    
     expect(page).to have_content('Não foi possível criar a promoção')
     expect(page).to have_content('Nome não pode ficar em branco')
     expect(page).to have_content('Código não pode ficar em branco')
     expect(page).to have_content('Desconto não pode ficar em branco')
     expect(page).to have_content('Quantidade de cupons não pode ficar em branco')
     expect(page).to have_content('Data de término não pode ficar em branco')
+  
 
   end
 

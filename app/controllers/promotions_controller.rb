@@ -15,11 +15,7 @@ class PromotionsController < ApplicationController
   end
 
   def create
-    promotion_params = params.require(:promotion).permit(:name, :description,
-                                      :code, :discount_rate,
-                                      :coupon_quantity, :expiration_date,
-                                      product_category_ids: [])
-    @promotion = Promotion.new(promotion_params)
+    @promotion = Promotion.new(promotion_params())
 
     @promotion.user = current_user
 
@@ -41,6 +37,16 @@ class PromotionsController < ApplicationController
     promotion = Promotion.find(params[:id])
     promotion.approve!(current_user)    
     redirect_to promotion
+  end
+
+  private
+
+  def promotion_params
+    params.require(:promotion).permit(:name, :description,
+                                      :code, :discount_rate,
+                                      :coupon_quantity, :expiration_date,
+                                      :photo,
+                                      product_category_ids: [])
   end
 
 end

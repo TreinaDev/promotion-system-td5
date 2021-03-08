@@ -71,10 +71,11 @@ describe Promotion do
                                     expiration_date: '22/12/2033', user: user)
       promotion.coupons.create!(code: 'NATAL10-0030')
 
-      expect { promotion.generate_coupons! }.to raise_error(ActiveRecord::RecordNotUnique)
+      expect { promotion.generate_coupons! }.to raise_error(ActiveRecord::RecordInvalid)
 
       expect(promotion.coupons.reload.size).to eq(1)
     end
+
   end
 
   context '#approve!' do

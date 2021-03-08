@@ -1,0 +1,4 @@
+pt-BR:
+  time:
+    formats:
+      json: "%d %M %Y"
