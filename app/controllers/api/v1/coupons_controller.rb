@@ -1,6 +1,6 @@
 module Api
   module V1
-    class  CouponsController < ApiController
+    class CouponsController < ApiController
       def show
         coupon = Coupon.find_by(code: params[:id])
         return render status: 404, json: "{ msg: 'coupon not found' }" if coupon.nil?

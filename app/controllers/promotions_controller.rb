@@ -12,7 +12,8 @@ class PromotionsController < ApplicationController
   def new
     @promotion = Promotion.new
     @product_categories = ProductCategory.all
-    @payment_methods = PaymentMethod.all 
+    #@payment_methods = PaymentMethod.all 
+    # comentamos essa linha pois foi só um teste de chamada de API externa
   end
 
   def create

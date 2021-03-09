@@ -14,7 +14,7 @@ describe PaymentMethod do
   context 'fetch API data' do
     it 'should get all payment methods' do
       resp_json = File.read(Rails.root.join('spec/support/apis/get_payment_methods.json'))
-      resp_double = double('faraday_response', status: 200, body: resp_json)
+      resp_double = double('faraday_response', status: 200, body: resp_json )
 
       allow(Faraday).to receive(:get).with('pagamentos.com.br/api/v1/payment_methods')
                                      .and_return(resp_double)
