@@ -21,6 +21,8 @@ feature 'Admin registers a promotion' do
   end
 
   scenario 'successfully' do
+    allow(PaymentMethod).to receive(:all).and_return([])
+
     user = User.create!(email: 'joao@email.com', password: '123456')
     # Act
     login_as user, scope: :user
@@ -34,6 +36,7 @@ feature 'Admin registers a promotion' do
     fill_in 'Desconto', with: '15'
     fill_in 'Quantidade de cupons', with: '90'
     fill_in 'Data de término', with: '22/12/2033'
+
     click_on 'Criar promoção'
 
     promotion = Promotion.last

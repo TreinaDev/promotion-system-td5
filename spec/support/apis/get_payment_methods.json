@@ -1,0 +1,4 @@
+[
+ { "code": "CARTAO", "name": "Cartão de Crédito"},
+ { "code": "BOLE", "name": "Boleto" }
+]
