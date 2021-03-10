@@ -37,7 +37,7 @@ class PromotionsController < ApplicationController
 
   def approve
     promotion = Promotion.find(params[:id])
-    promotion.approve!(current_user)    
+    promotion.approve!(current_user)
     redirect_to promotion
   end
 

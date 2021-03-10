@@ -1,0 +1,15 @@
+require: rubocop-rails
+
+
+AllCops:
+  TargetRubyVersion: 2.7
+
+Style/Documentation: 
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+
+Layout/EmptyLinesAroundClassBody:
+  EnforcedStyle: empty_lines

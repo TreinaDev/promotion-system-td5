@@ -1,5 +1,5 @@
 class RandomWord
-  def self.random()
+  def self.random
     if Random.rand < 0.5
       'Campus'
     else
