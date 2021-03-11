@@ -1,0 +1,14 @@
+<%= form_with url: search_coupons_path, method: :get, local: false, id: 'search-form' do |f| %>
+  <%= f.label :q, 'Termo' %>
+  <%= f.text_field :q %>
+  <%= f.submit 'Buscar' %>
+<% end %>
+
+<div id="coupons">
+  <%= render @coupons %>
+</div>
+
+<%= content_for :javascript do %>
+  <%= javascript_pack_tag 'search' %>
+<% end %>
+

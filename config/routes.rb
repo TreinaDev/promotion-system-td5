@@ -9,8 +9,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :coupons, only: [] do
+  resources :coupons, only: [:index] do
     post 'inactivate', on: :member
+    get 'search', on: :collection
   end
 
   namespace 'api', defaults: { format: :json } do
