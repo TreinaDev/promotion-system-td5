@@ -15,8 +15,8 @@ describe PromotionMailer do
       expect(mail.to).to eq ['joao@gmail.com']
       expect(mail.from).to eq ['contato@promocoes.com.br']
       expect(mail.body).to include 'Promoção Aprovada'
-      expect(mail.body).to include 'Sua promoção Black Fraude foi '\ #string multi line
-'aprovada por henrique@gmail.com'
+      expect(mail.body).to include 'Sua promoção Black Fraude foi '\
+                                   'aprovada por henrique@gmail.com'
     end
   end
   
